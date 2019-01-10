@@ -1,14 +1,35 @@
 import express from 'express';
-import path from 'path';
+// import path from 'path';
+import next from 'next';
 
-const app = express();
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.prepare()
+  .then(() => {
+    const server = express();
+    server.get('*', (req, res) => {
+      return handle(req, res)
+    });
+    server.listen(4000, (err) => {
+      if (err) throw err
+      console.log('> Ready on http://localhost:4000')
+    })
+  })
+  .catch((ex) => {
+    console.error(ex.stack)
+    process.exit(1)
+  })
 
-app.get('/', ((req, res) => {
-  res.render('index');
-}));
+// const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
-app.listen(4000, () => console.log('Example app listening on port 4000!'));
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
+
+// app.get('/', ((req, res) => {
+//   res.render('index');
+// }));
+
+// app.use(express.static(path.join(__dirname, '../public')));
+// app.listen(4000, () => console.log('Example app listening on port 4000!'));
