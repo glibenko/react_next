@@ -1,9 +1,8 @@
-### React template
+### React Next
 
 This is a template to build a scalable react web application using:
 * React
 * Express
-* Webpack
 * ESlint
 * Babel
 * Jest
@@ -12,7 +11,7 @@ This is a template to build a scalable react web application using:
 ### Fast start
 ```sh
 # Clone the repository
-$ git clone https://github.com/njiyto/react_template
+$ git clone https://github.com/njiyto/react_next.git
 
 # Install dependencies
 $ npm install
