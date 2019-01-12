@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -22,4 +23,4 @@ export default ({ children, title = 'This is the default title' }) => (
       {'I`m here to stay'}
     </footer>
   </div>
-)
+);

@@ -2,11 +2,10 @@
 
 This is a template to build a scalable react web application using:
 * React
+* Next
 * Express
 * ESlint
 * Babel
-* Jest
-* Enzyme
 
 ### Fast start
 ```sh
@@ -21,13 +20,11 @@ $ npm start
 ```
 
 ### Description
-* [npm start] - concurrently run two commands below
-* [npm run build:dev] - webpack --progress
-* [npm run start:dev] -  nodemon --watch ./server/server.js on 4000 port
+* [npm start] - nodemon --watch ./server/index.js --watch ./server/ on 4000 port
 
 ### Folder Structure
-* [client] - there are all files which relate to front
-* [public] - there is a ready app
+* [components] - next pages
+* [pages] - next pages
 * [server] - there are all files which relate to server
 * [root files] - there are all settings files
 
@@ -41,5 +38,5 @@ $ git remote set-url
 ```
 
 ### TODO
-* redux thunk
-* flow
+* elsint for next
+* next fetching
