@@ -2,10 +2,6 @@ import express from 'express';
 import next from 'next';
 import { parse } from 'url';
 
-// const express = require('express');
-// const next = require('next');
-// const { parse } = require('url');
-
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
@@ -13,11 +9,6 @@ const handle = nextApp.getRequestHandler();
 nextApp.prepare()
   .then(() => {
     const app = express();
-    // app.use('*', require('./pages/index'))
-    // app.get('/', (req, res) => {
-    //   return handle(req, res);
-    // });
-
     app.get('*', (req, res) => {
       const parsedUrl = parse(req.url, true);
       const { pathname, query } = parsedUrl;

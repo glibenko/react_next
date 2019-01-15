@@ -53,3 +53,40 @@ footer {
 .page-1 img {
   margin-top: 10px;
 }
+
+.react {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.react .name {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.react .btn {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.react .btn:hover {
+  color: red
+}
+
+.react .other {
+  width: 150px;
+  height: 150px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.react .img {
+  margin-top: 10px;
+}
